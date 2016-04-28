@@ -23,8 +23,8 @@ post '/fav_nums' do
 	sum = fav_num1.to_i + fav_num2.to_i + fav_num3.to_i
 	if sum < session[:age].to_i
 		erb :display_comment, :locals => {:sum => sum, :fav_num1 => fav_num1, :fav_num2 => fav_num2, :fav_num3 => fav_num3, :name => session[:name], :result => "less"}
-	elsif sum > session[:age].to_i
-		erb :display_comment, :locals => {:sum => sum, :fav_num1 => fav_num1, :fav_num2 => fav_num2, :fav_num3 => fav_num3, :name => session[:name], :result => "more"}
+	else		
+		erb :display_comment, :locals => {:sum => sum, :fav_num1 => fav_num1, :fav_num2 => fav_num2, :fav_num3 => fav_num3, :name => session[:name], :result => "greater"}
 	end
 end
 
