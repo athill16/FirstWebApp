@@ -1,3 +1,5 @@
+require_relative "helper_functions.rb"
+
 def start
 	get_name
 	get_age
@@ -25,7 +27,7 @@ def get_favorite_numbers
 end
 
 def display_message
-	sum = @favorite_numbers[0] + @favorite_numbers[1] + @favorite_numbers[2]
+	sum = sum(@favorite_numbers[0], @favorite_numbers[1], @favorite_numbers[2])
 	if @age.to_i > sum
 		puts "#{@name}, the sum of #{@favorite_numbers[0]}, #{@favorite_numbers[1]}, and #{@favorite_numbers[2]} is #{sum}. This is less than your age."
 	elsif @age.to_i < sum
